@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     strategy:
@@ -25,4 +24,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm test
+      shell: powershell
+    - run: Start-Job -Name "Server" {node ./server.js}; Start-Sleep -Seconds 1; npm test; Remove-Job -Name "Server"
