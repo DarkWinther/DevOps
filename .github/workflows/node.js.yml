@@ -26,4 +26,3 @@ jobs:
     - run: npm ci
     - run: Start-Job -Name "Server" {Set-Location $using:PWD; node .\server.js}; Start-Sleep -Seconds 1; Receive-Job -Name "Server"; npm test; Remove-Job -Name "Server" -Force
       shell: powershell
-      working-directory: .\
