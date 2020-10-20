@@ -27,7 +27,12 @@ jobs:
       shell: powershell
       working-directory: .
     - run: Start-Job -Name "Server" {node .\server.js}
+      shell: powershell
     - run: Start-Sleep -Seconds 1
+      shell: powershell
     - run: Get-Job
+      shell: powershell
     - run: npm test
+      shell: powershell
     - run: Remove-Job -Name "Server" -Force
+      shell: powershell
