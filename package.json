@@ -1,0 +1,20 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "TEC DevOps",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkWinther/DevOps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DarkWinther/DevOps/issues"
+  },
+  "homepage": "https://github.com/DarkWinther/DevOps#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
