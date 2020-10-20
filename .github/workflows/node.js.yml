@@ -28,6 +28,6 @@ jobs:
       working-directory: .
     - run: Start-Job -Name "Server" {node .\server.js}
     - run: Start-Sleep -Seconds 1
-    - run: Receive-job -Name "Server"
+    - run: Get-Job
     - run: npm test
     - run: Remove-Job -Name "Server" -Force
