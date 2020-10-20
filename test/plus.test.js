@@ -22,15 +22,3 @@ describe('Plus',function() {
         .catch(reason => assert.strictEqual(reason.response.status, 400));
     });
 });
-
-describe('Minus', function() {
-    it('Should subtract 1 from 1 and return 0', async function() {
-        const res = await axios('http://localhost:3000/minus?arg1=1&arg2=1');
-        assert.strictEqual(res.data.result, 0);
-    });
-
-    it('Should subtract 1 from 2 and return 1', async function() {
-        const res = await axios('http://localhost:3000/minus?arg1=1&arg2=2');
-        assert.strictEqual(res.data.result, 1);
-    });
-});
