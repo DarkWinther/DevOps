@@ -24,5 +24,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: Start-Job -Name "Server" {node .\server.js}; Start-Sleep -Seconds 1; Get-Job; npm test; Remove-Job -Name "Server" -Force
+    - run: Start-Job -Name "Server" {node .\server.js}; Start-Sleep -Seconds 1; Receive-Job -Name "Server"; npm test; Remove-Job -Name "Server" -Force
       shell: powershell
