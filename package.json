@@ -4,6 +4,7 @@
   "description": "TEC DevOps",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon --delay 500ms ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "homepage": "https://github.com/DarkWinther/DevOps#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
