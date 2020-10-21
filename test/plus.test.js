@@ -18,7 +18,7 @@ describe('Plus',function() {
     });
 
     it('Should respond with error code 400', async function() {
-        const res = await axios('http://localhost:3000/plus?arg1=to&arg2=to')
-        .catch(reason => assert.strictEqual(reason.response.status, 400));
+        await axios('http://localhost:3000/plus?arg1=to&arg2=to')
+            .catch(reason => assert.strictEqual(reason.response.status, 400));
     });
 });

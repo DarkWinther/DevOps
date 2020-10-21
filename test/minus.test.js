@@ -18,7 +18,7 @@ describe('Minus', function() {
     })
 
     it('Should respond with error code 400', async function() {
-        const res = await axios('http://localhost:3000/minus?arg1=to&arg2=to')
-        .catch(reason => assert.strictEqual(reason.response.status, 400));
+        await axios('http://localhost:3000/minus?arg1=to&arg2=to')
+            .catch(reason => assert.strictEqual(reason.response.status, 400));
     });
 });
