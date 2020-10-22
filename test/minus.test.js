@@ -49,7 +49,7 @@ describe('Minus', function() {
         });
     });
 
-    it('Should subtract 151545155 from 155484212 and return -1539402729', async function() {
+    it('Should subtract 155484212 from 151545155 and return -3939057', async function() {
         return await new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=151545155&arg2=155484212', res => {
                 res.on('data', d => {
