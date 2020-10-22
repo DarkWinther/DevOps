@@ -2,7 +2,7 @@ name: MacOS Mocha Unit Tests
 
 on:
   push:
-    branches: [ main, os-test ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
