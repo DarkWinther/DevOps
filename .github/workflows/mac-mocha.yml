@@ -21,6 +21,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: node server.js & ps -aef | grep node
-    - run: sleep 1s
-    - run: npm test
+    - run: node server.js & sleep 1s && npm test && killall node
