@@ -1,8 +1,8 @@
 const http = require('http');
 
 describe('Plus', function() {
-    it('Should add 1 to 1 and return 2', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should add 1 to 1 and return 2', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/plus?arg1=1&arg2=1', res => {
                 res.on('data', d => {
                     try {
@@ -25,8 +25,8 @@ describe('Plus', function() {
         });
     });
 
-    it('Should add 2 to 2 and return 4', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should add 2 to 2 and return 4', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/plus?arg1=2&arg2=2', res => {
                 res.on('data', d => {
                     try {
@@ -49,8 +49,8 @@ describe('Plus', function() {
         });
     });
 
-    it('Should add 1557857484 to 18454755 and return 1576312239', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should add 1557857484 to 18454755 and return 1576312239', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/plus?arg1=1557857484&arg2=18454755', res => {
                 res.on('data', d => {
                     try {
@@ -73,8 +73,8 @@ describe('Plus', function() {
         });
     });
 
-    it('Should respond with error code 400', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should respond with error code 400', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/plus?arg1=to&arg2=to', res => {
                 if (res.statusCode === 400) {
                     resolve({ statuscode: 400 });
