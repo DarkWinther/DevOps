@@ -25,30 +25,6 @@ describe('Plus', function() {
         });
     });
 
-    it('Should add 2 to 2 and return 4', function() {
-        return new Promise((resolve, reject) => {
-            const req = http.request('http://localhost:3000/plus?arg1=2&arg2=2', res => {
-                res.on('data', d => {
-                    try {
-                        const { result } = JSON.parse(d);
-                        if (result === 4) {
-                            resolve({ result });
-                        } else {
-                            reject({ result });
-                        }
-                    } catch (error) {
-                        reject(error);
-                    }
-                });
-            });
-
-            req.on('error', err => {
-                reject(err);
-            });
-            req.end();
-        });
-    });
-
     it('Should add 1557857484 to 18454755 and return 1576312239', function() {
         return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/plus?arg1=1557857484&arg2=18454755', res => {
