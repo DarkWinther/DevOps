@@ -25,30 +25,6 @@ describe('Minus', function() {
         });
     });
 
-    it('Should subtract 1 from 2 and return -1', function() {
-        return new Promise((resolve, reject) => {
-            const req = http.request('http://localhost:3000/minus?arg1=1&arg2=2', res => {
-                res.on('data', d => {
-                    try {
-                        const { result } = JSON.parse(d);
-                        if (result === -1) {
-                            resolve({ result });
-                        } else {
-                            reject({ result });
-                        }
-                    } catch (error) {
-                        reject(error);
-                    }
-                });
-            });
-
-            req.on('error', err => {
-                reject(err);
-            });
-            req.end();
-        });
-    });
-
     it('Should subtract 155484212 from 151545155 and return -3939057', function() {
         return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=151545155&arg2=155484212', res => {
