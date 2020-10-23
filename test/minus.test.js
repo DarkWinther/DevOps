@@ -1,8 +1,8 @@
 const http = require('http');
 
 describe('Minus', function() {
-    it('Should subtract 1 from 1 and return 0', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should subtract 1 from 1 and return 0', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=1&arg2=1', res => {
                 res.on('data', d => {
                     try {
@@ -25,8 +25,8 @@ describe('Minus', function() {
         });
     });
 
-    it('Should subtract 1 from 2 and return -1', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should subtract 1 from 2 and return -1', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=1&arg2=2', res => {
                 res.on('data', d => {
                     try {
@@ -49,8 +49,8 @@ describe('Minus', function() {
         });
     });
 
-    it('Should subtract 155484212 from 151545155 and return -3939057', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should subtract 155484212 from 151545155 and return -3939057', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=151545155&arg2=155484212', res => {
                 res.on('data', d => {
                     try {
@@ -73,8 +73,8 @@ describe('Minus', function() {
         });
     });
 
-    it('Should respond with error code 400', async function() {
-        return await new Promise((resolve, reject) => {
+    it('Should respond with error code 400', function() {
+        return new Promise((resolve, reject) => {
             const req = http.request('http://localhost:3000/minus?arg1=to&arg2=to', res => {
                 if (res.statusCode === 400) {
                     resolve({ statusCode: 400 });
